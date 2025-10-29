@@ -27,23 +27,24 @@ public class TorpedoStore {
       }
     }
   }
-
+  Random generator = new Random();
   public boolean fire(int numberOfTorpedos){
     if(numberOfTorpedos < 1 || numberOfTorpedos > this.torpedoCount){
-      new IllegalArgumentException("numberOfTorpedos");
+      throw new IllegalArgumentException("numberOfTorpedos");
     }
 
     boolean success = false;
 
-    // simulate random overheating of the launcher bay which prevents firing
-    Random generator = new Random();
+    // simulate random overheating of the launcher bay which prevents firing.
+  
+    
     double r = generator.nextDouble();
-
+//ignore thiss
     if (r >= FAILURE_RATE) {
-      // successful firing
-      this.torpedoCount =- numberOfTorpedos;
+      
+      this.torpedoCount = -numberOfTorpedos;
       success = true;
-    } else {
+    } else { 
       // simulated failure
       success = false;
     }
