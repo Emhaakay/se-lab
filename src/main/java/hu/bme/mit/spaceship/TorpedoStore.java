@@ -39,7 +39,7 @@ public class TorpedoStore {
   
     
     double r = generator.nextDouble();
-//ignore this
+//ignore thiss
     if (r >= FAILURE_RATE) {
       // successful firing
       this.torpedoCount = -numberOfTorpedos;
